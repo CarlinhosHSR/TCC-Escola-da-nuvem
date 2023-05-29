@@ -1,35 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
 
 :root {
-    --cor-primaria: #f6f6f6;
-    --cor-secundaria: #F6F6F6;
-    --cor-terciaria: #22D4FD;
-    --cor-quaternaria: #03989f;
-    --fonte-primaria: 'Krona One', sans-serif;
+    --cor-primaria: #F6F6F6;
+    --cor-secundaria: #22D4FD;
+    --cor-terciaria: #03989f;
+    --fonte-primaria: 'Arial', sans-serif;
+    --fonte-secundaria: 'Krona One', sans-serif;
 }
 *{
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: var(--fonte-primaria);
 }
 
 body{
     box-sizing: border-box;
     background-color: var(--cor-primaria);
-    color: var(--cor-secundaria);
+    color: var(--cor-primaria);
     display: flex;
     flex-direction: column;
 }
 .cabecalho{
-    padding: 2% 0% 0% 15%;
-    background-color: var(--cor-quaternaria);
+    padding: 0.5% 0% 0% 15%;
+    background-color: var(--cor-terciaria);
 }
 .cabecalho__menu{
     display: flex;
-    gap: 80px;
+    gap: 4rem;
 }
 .cabecalho__menu__link{
-    font-family: var(--fonte-secundaria);
+    font-family: var(--cor-primaria);
     font-size: 1.5rem;
     font-weight: 600;
     color: black;
@@ -50,7 +50,7 @@ body{
 .apresentacao__conteudo__contato {
     width: 35%;  
     padding: 3% 0 0 0;  
-    background-color: #03989f;
+    background-color: var(--cor-terciaria);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,7 +79,7 @@ body{
 }
 .apresentacao__conteudo__titulo{
     font-size: 1.5rem;
-    font-family: var(--fonte-primaria);
+    font-family: var(--fonte-secundaria);
 }
 
 
@@ -93,11 +93,13 @@ body{
 }
 .apresentacao__conteudo__referencias__nome {
     font-size: 2.50rem;
+    font-family: var(--fonte-primaria);
     font-weight: bold;
     color: #03989f;
 }
 .apresentacao__conteudo__referencias__titulo {
     font-size: 1.8rem;
+    font-family: var(--fonte-secundaria);
     color: #03989f;
     font-weight: 700;
     display: flex;
@@ -114,27 +116,39 @@ body{
 .rodape{
     padding-top: 0.5rem;
     color: var(--cor-primaria);
-    background-color: var(--cor-quaternaria);
+    background-color: var(--cor-terciaria);
     margin-top: 3.1rem;
     text-align: center;
-    font-family: var(--fonte-secundaria);
+    font-family: var(--cor-primaria);
     font-size: 1.5rem;
     font-weight: 400;
 }
-@media (max-width: 1200px) {
-    .cabecalho {
-        padding: 5%;
-    }
-
-    .cabecalho__menu {
-        justify-content: center;
-    }
-
-    .apresentacao {
-        flex-direction: column-reverse;
-    }
-
+@media (max-width: 900px) {
     .apresentacao__conteudo{
         width: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+    .apresentacao__conteudo__contato {
+        width: auto;
+        border-radius: 0.5rem;
+    }
+    .apresentacao__conteudo__referencias {
+        width: auto;
+    }
+    .apresentacao__conteudo__referencias__texto {
+        width: 80%;
+    }
+    .apresentacao__conteudo__contato__foto {
+        width: 50%;
+    }
+}
+@media (max-height: 1000px) {
+    .rodape {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
     }
 }
